@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Sales and Stock Control System for mid-sized businesses">
+    <meta name="author" content="Ilman Iqbal">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Sales & Stock Control System</title>
+
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-bars" onclick="openNav()"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="navbar-brand" href="index.html">Sales & Stock Control System</a>
+</nav>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <a href="new-sale.html"><i class="far fa-list-alt"></i>Sales</a>
+        <a href="manage-stock.html"><i class="fas fa-th"></i>Stock</a>
+        <a href="manage-employee.html"><i class="fas fa-users"></i>Employees</a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 vertical_menu_column">
+
+            <div class="vertical-menu">
+                <a class="disabled">Stock</a>
+                <a><i class="fas fa-sitemap"></i>Bangle</a>
+                <a><i class="fas fa-sitemap"></i>Bracelet</a>
+                <a><i class="fas fa-sitemap"></i>BabyRing</a>
+                <a><i class="fas fa-sitemap"></i>Chain</a>
+                <a><i class="fas fa-sitemap"></i>Earing</a>
+                <a><i class="fas fa-sitemap"></i>Jipsy</a>
+                <a><i class="fas fa-sitemap"></i>Necklace</a>
+                <a><i class="fas fa-sitemap"></i>Pendant</a>
+                <a><i class="fas fa-sitemap"></i>Panchayutha</a>
+                <a><i class="fas fa-sitemap"></i>Ring</a>
+                <a><i class="fas fa-sitemap"></i>Tussel</a>
+            </div>
+
+        </div>
+        <div class="col-lg-10 col-md-9">
+            <div class="row" id="margin_top_bottom_head">
+                <div class="col-md-12"></div>
+            </div>
+            <div id="sale_item_section">
+                <form id="frmStock">
+                    <input type="hidden" name="action" value="insert">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" id="txtItemId" name="txtItemId" class="form-control"
+                                   placeholder="Item ID" readonly>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="number" id="nbrWeight" name="nbrWeight" class="form-control text-right"
+                                   min="0" step="0.001" placeholder="Weight">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="number" id="nbrRate" name="nbrRate" class="form-control text-right"
+                                   min="0" step="0.01" placeholder="Rate">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" id="dateAdded" name="dateAdded" class="form-control"
+                                   onfocus="(this.type='date')"
+                                   onblur="(this.type='text')" placeholder="Date Added">
+                        </div>
+                        <div class="col-md-8 form-group">
+                            <input type="text" id="txtDetails" name="txtDetails" class="form-control"
+                                   placeholder="Detials">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="button" id="btnAdd" class="form-group btn btn-danger">Add</button>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <button type="button" id="btnClear" class="form-group btn btn-danger">Clear</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="row form-group">
+                <table id="tblItem" class="table table-sm table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Weight (g)</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Date Added</th>
+                        <th scope="col">Date Sold</th>
+                        <th scope="col">Price Sold</th>
+                        <th scope="col">Sale ID</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="9" class="text-center">
+                            You have not added any items
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="dist/js/jquery-3.3.1.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="dist/js/script.js"></script>
+<script type="text/javascript" src="dist/js/controller/manage-stock-controller.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+

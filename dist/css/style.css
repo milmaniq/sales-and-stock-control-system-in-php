@@ -1,0 +1,228 @@
+.fa:hover{
+    cursor: pointer;
+}
+
+.fa-bars{
+    margin-right: 20px;
+    font-size: 17px;
+}
+
+nav a:hover{
+    color: #ffffff !important;
+}
+
+.fa-list-alt, .fa-th, .fa-users{
+    margin-right: 20px;
+    font-size: 35px;
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #aaaaaa;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #ffffff;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.vertical_menu_column{
+    padding: 0px !important;
+}
+
+.vertical-menu {
+    width: 100%;
+}
+
+.vertical-menu a {
+    background-color: #FFFFFF;
+    color: #000000;
+    display: block;
+    font-size: 18px;
+    padding: 12px 0px 12px 25px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover, .vertical-menu a.active:hover {
+    background-color: #DCDCDC;
+    cursor: pointer;
+}
+
+.vertical-menu a.disabled:hover {
+    background-color: #FFFFFF;
+    cursor: default;
+}
+
+.vertical-menu a.active {
+    background-color: #FFFFFF;
+    color: #ff3333;
+    border-left: 5px solid #ff3333;
+}
+
+.vertical-menu a i{
+    margin-right: 15px;
+}
+
+#margin_top_bottom_head{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+#sale_item_section{
+    background-color: #dddddd;
+    padding: 20px 30px 0px 30px !important;
+}
+
+#sale_item_section .justify-content-center{
+    margin-bottom: 20px !important;
+}
+
+#sale_item_section table{
+    font-size: 15px;
+}
+
+#lblTotal{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+
+    #lblTotal{
+        text-align: left !important;
+        margin-left: 0px;
+    }
+    #sale_item_section table{
+        font-size: 13px;
+        overflow-x: hidden  !important;
+    }
+
+    #lblFrom, #lblTo{
+        text-align: left !important;
+    }
+
+
+    #tblSaleReport{
+        padding: 20px !important;
+    }
+
+}
+
+#tblSaleItem tbody tr td:last-child, #tblSaleItem tbody tr td:nth-child(4){
+    text-align: right;
+}
+
+#tblSale tbody tr td:nth-child(6){
+    text-align: right;
+}
+
+
+#tblSale tbody tr td:nth-child(7), #tblSale tbody tr td:nth-child(8){
+    text-align: center;
+}
+
+#lblFrom, #lblTo{
+    line-height: 33px;
+}
+
+#tblSaleReport{
+    margin-top:20px;
+}
+
+#tblSaleReport tbody tr td:nth-child(4), #tblSaleReport tbody tr td:nth-child(5), #tblSaleReport tbody tr td:nth-child(6){
+    text-align: right;
+}
+
+#tblDayProfitReport tbody tr td:nth-child(2){
+    text-align: right;
+}
+
+
+
+.highlightTableRow{
+    background-color: #dddddd;
+}
+
+#tile_container  .col-md-3, #tile_container  .col-md-4{
+    background-color: #e60000 !important;
+    padding: 30px;
+    border: 15px solid white;
+}
+
+.index_tile span{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Comic Sans MS";
+}
+
+.index_tile h2{
+    color: white !important;
+    text-align: right !important;
+    font-family: "Courier New";
+}
+
+#tile_container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.chart_title{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#chartSales, #chartProfit{
+    margin-bottom: 30px;
+}

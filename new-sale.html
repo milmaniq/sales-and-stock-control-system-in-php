@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Sales and Stock Control System for mid-sized businesses">
+    <meta name="author" content="Ilman Iqbal">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Sales & Stock Control System</title>
+
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-bars" onclick="openNav()"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="navbar-brand" href="index.html">Sales & Stock Control System</a>
+</nav>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <a href="new-sale.html"><i class="far fa-list-alt"></i>Sales</a>
+        <a href="manage-stock.html"><i class="fas fa-th"></i>Stock</a>
+        <a href="manage-employee.html"><i class="fas fa-users"></i>Employees</a>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 vertical_menu_column">
+
+            <div class="vertical-menu">
+                <a class="disabled">Sale</a>
+                <a href="new-sale.html" class="active"><i class="fas fa-file-alt"></i>New Sale</a>
+                <a href="manage-sale.html"><i class="fas fa-paste"></i>Manage Sale</a>
+                <a href="sale-report.html"><i class="fas fa-copy"></i>Sale Report</a>
+            </div>
+
+        </div>
+        <div class="col-lg-10 col-md-9">
+            <div class="row" id="margin_top_bottom_head">
+                <div class="col-md-12">New Sale</div>
+            </div>
+            <form id="frmSale">
+                <input type="hidden" name="action" value="insert">
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <input type="text" id="txtSalesId" name="txtSalesId" class="form-control" placeholder="Sales ID" readonly>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" id="txtEmployeeId" name="txtEmployeeId" list="dlEmployeeId" class="form-control" placeholder="Employee ID">
+                        <datalist id="dlEmployeeId">
+                        </datalist>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 form-group">
+                        <input type="text" id="txtName" name="txtName" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" id="txtContact" name="txtContact" class="form-control" placeholder="Contact">
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="text" id="dateSale" name="dateSale" class="form-control" onfocus="(this.type='date')"
+                               onblur="(this.type='text')" placeholder="Date of Sale">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input type="text" id="txtAddress" name="txtAddress" class="form-control" placeholder="Address">
+                    </div>
+                </div>
+                <div id="sale_item_section">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <input type="text" id="txtItemId" list="dlItemId" class="form-control"
+                                   placeholder="Item ID">
+                            <datalist id="dlItemId">
+                            </datalist>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="text" id="txtDescription" class="form-control" placeholder="Description">
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="number" id="nbrPrice" class="form-control" placeholder="Price" min="0"
+                                   step="0.01">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <button type="button" id="btnAdd" class="btn btn-danger">Add</button>
+                    </div>
+                    <div class="row form-group">
+                        <table id="tblSaleItem" class="table table-sm">
+                            <thead>
+                            <tr>
+                                <th scope="col">Item ID</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Weight (g)</th>
+                                <th scope="col" class="text-right">Price</th>
+                                <th scope="col" class="text-right">Remove</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    You have not added any items
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div id="lblTotal" class="col-md-4 offset-md-4 text-right">
+                        <span>Total</span>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="number" id="nbrTotal" name="nbrTotal" class="form-control text-right" value="0" min="0" step="0.01"
+                               readonly>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-4 offset-md-8">
+                        <button type="button" id="btnMakeSale" class="btn btn-danger btn-block">Make Sale</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="dist/js/jquery-3.3.1.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="dist/js/script.js"></script>
+<script type="text/javascript" src="dist/js/controller/new-sale-controller.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+

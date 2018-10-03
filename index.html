@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ultimate Sales and Stock Control System for mid-sized businesses">
+    <meta name="author" content="Ilman Iqbal">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Sales & Stock Control System</title>
+
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+                <i class="fas fa-bars" onclick="openNav()"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="navbar-brand" href="index.html">Sales & Stock Control System</a>
+</nav>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <a href="new-sale.html"><i class="far fa-list-alt"></i>Sales</a>
+        <a href="manage-stock.html"><i class="fas fa-th"></i>Stock</a>
+        <a href="manage-employee.html"><i class="fas fa-users"></i>Employees</a>
+    </div>
+</div>
+
+<div class="container">
+    <div id="tile_container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Bangles</span>
+                    <h2 id="countBangle"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Bracelets</span>
+                    <h2 id="countBracelet"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Baby Rings</span>
+                    <h2 id="countBabyRing"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Chains</span>
+                    <h2 id="countChain"></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Earings</span>
+                    <h2 id="countEaring"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Jipsy</span>
+                    <h2 id="countJipsy"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Necklace</span>
+                    <h2 id="countNecklace"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Pendants</span>
+                    <h2 id="countPendant"></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Panchayutha</span>
+                    <h2 id="countPanchayutha"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Ring</span>
+                    <h2 id="countRing"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of Tussel</span>
+                    <h2 id="countTussel"></h2>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="index_tile">
+                    <span>No. of All Available Items</span>
+                    <h2 id="countAllAvailable"></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="index_tile">
+                    <span>No. of Sales today</span>
+                    <h2 id="countSale"></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="index_tile">
+                    <span>Total Sales today</span>
+                    <h2 id="sumSale"></h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="index_tile">
+                    <span>Total Profit Today</span>
+                    <h2 id="sumProfit"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart_title">Sales Chart</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="chartSales"></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 chart_title">Profit Chart</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <canvas id="chartProfit"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="dist/js/jquery-3.3.1.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="dist/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script type="text/javascript" src="dist/js/controller/index-controller.js"></script>
+
+</body>
+
+</html>
+
+
+
+
