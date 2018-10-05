@@ -1,4 +1,4 @@
-# Sales and Installment based Order System
+# Sales and Stock Control System
 
 This system is a Web Application that can be implemented in a Jewellery Store. 
 It has the functionality to record Customer Sales.
